@@ -1298,6 +1298,12 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consulta Movimientos", pnlConMov);
 
+        txtcedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcedulaKeyTyped(evt);
+            }
+        });
+
         jLabel11.setText("Ingrese N.- Cedula: ");
 
         jLabel20.setText("Numero de cuenta");
@@ -1860,6 +1866,31 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         reiniciarSistema();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void txtcedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcedulaKeyTyped
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        cbcpres.removeAllItems();
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+           evt.consume();
+        }
+        if(ced.length() == 13 || ced.length() == 10) {
+            ArrayList<Cuenta> aux = new ArrayList<Cuenta>();
+            aux = cuent.buscarCuenta(ced);
+            if(aux.size() > 0) {
+                for(int i = 0; i < aux.size(); i++) {
+                    if(aux.get(i).getEstado().equals("act"))
+                        System.out.println(aux.get(i).getCodigo());
+                        cbcpres.addItem(Integer.toString(aux.get(i).getCodigo()));
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
+            }
+        }
+    }//GEN-LAST:event_txtcedulaKeyTyped
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

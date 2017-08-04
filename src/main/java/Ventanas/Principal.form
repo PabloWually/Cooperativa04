@@ -1561,6 +1561,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtcedula">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtcedulaKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
