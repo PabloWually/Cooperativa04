@@ -541,6 +541,22 @@ public class Principal extends javax.swing.JFrame {
         txDesde = new javax.swing.JTextField();
         txtHasta = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
+        pnlPresClien = new javax.swing.JPanel();
+        txtcedula = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        bntconsultar = new javax.swing.JButton();
+        cbcpres = new javax.swing.JComboBox<>();
+        txtcprestamo = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        txtpprestamo = new javax.swing.JTextField();
+        bntnuevo = new javax.swing.JButton();
+        bntgprestamo = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        txtspromedio = new javax.swing.JTextField();
+        txtpmaximo = new javax.swing.JTextField();
         fecha1 = new javax.swing.JLabel();
         lbUsuPrinc = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
@@ -592,29 +608,26 @@ public class Principal extends javax.swing.JFrame {
         pnlRegMov2Layout.setHorizontalGroup(
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                .addGap(229, 229, 229)
-                .addComponent(jLabel34)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel27))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(229, 229, 229)
+                        .addComponent(jLabel34))
                     .addGroup(pnlRegMov2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
                         .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel27))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlRegMov2Layout.createSequentialGroup()
                                 .addComponent(txtmontomovi, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cmbtipoMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(136, 346, Short.MAX_VALUE))))
+                            .addComponent(txtnumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         pnlRegMov2Layout.setVerticalGroup(
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -785,11 +798,10 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(gesClitxApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(gesCliIngresoLayout.createSequentialGroup()
                         .addGap(132, 132, 132)
-                        .addComponent(gesCliBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(104, 371, Short.MAX_VALUE))
-            .addGroup(gesCliIngresoLayout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addComponent(jLabel4)
+                        .addComponent(gesCliBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(gesCliIngresoLayout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         gesCliIngresoLayout.setVerticalGroup(
@@ -869,27 +881,26 @@ public class Principal extends javax.swing.JFrame {
         gesCliIngreso1Layout.setHorizontalGroup(
             gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
                 .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
                         .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19))
-                        .addGap(18, 18, 18)
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel22))
-                        .addGap(18, 18, 18)
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(79, 341, Short.MAX_VALUE))
-            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19))
+                                .addGap(18, 18, 18)
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22))
+                                .addGap(18, 18, 18)
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(gesCliIngreso1Layout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addComponent(gesCliBtnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1287,6 +1298,112 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consulta Movimientos", pnlConMov);
 
+        jLabel11.setText("Ingrese N.- Cedula: ");
+
+        jLabel20.setText("Numero de cuenta");
+
+        bntconsultar.setText("Consultar");
+
+        txtcprestamo.setEditable(false);
+
+        jLabel40.setText("Ingrese Cantidad de Prestamo");
+
+        jLabel41.setText("Periodo de Prestamo");
+
+        txtpprestamo.setEditable(false);
+
+        bntnuevo.setText("Nuevo");
+
+        bntgprestamo.setText("Generar Prestamo");
+        bntgprestamo.setEnabled(false);
+
+        jLabel39.setText("Prestamo Maximo");
+
+        jLabel23.setText("Saldo promedio");
+
+        txtspromedio.setEditable(false);
+
+        txtpmaximo.setEditable(false);
+
+        javax.swing.GroupLayout pnlPresClienLayout = new javax.swing.GroupLayout(pnlPresClien);
+        pnlPresClien.setLayout(pnlPresClienLayout);
+        pnlPresClienLayout.setHorizontalGroup(
+            pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresClienLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPresClienLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel40))
+                        .addGap(62, 62, 62)
+                        .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtpprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(127, 127, 127))
+                    .addGroup(pnlPresClienLayout.createSequentialGroup()
+                        .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel20))
+                        .addGap(49, 49, 49)
+                        .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtcedula)
+                            .addComponent(cbcpres, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(69, 69, 69)
+                        .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnlPresClienLayout.createSequentialGroup()
+                                .addComponent(jLabel23)
+                                .addGap(28, 28, 28)
+                                .addComponent(txtspromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlPresClienLayout.createSequentialGroup()
+                                .addComponent(jLabel39)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtpmaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlPresClienLayout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(bntgprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(bntnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPresClienLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(bntconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        pnlPresClienLayout.setVerticalGroup(
+            pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresClienLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)
+                    .addComponent(txtspromedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(cbcpres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(txtpmaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(bntconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtcprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(txtpprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntgprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47))
+        );
+
+        jTabbedPane1.addTab("Prestamos", pnlPresClien);
+
         fecha1.setText("Fecha: ");
 
         lbUsuPrinc.setText("usu");
@@ -1363,7 +1480,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(67, 67, 67))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1778,6 +1895,9 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_cuentas_consulta1;
+    private javax.swing.JButton bntconsultar;
+    private javax.swing.JButton bntgprestamo;
+    private javax.swing.JButton bntnuevo;
     private javax.swing.JButton btnConsultarCuentas1;
     private javax.swing.JButton btnConsultasMovimientos;
     private javax.swing.JButton btnOk;
@@ -1785,6 +1905,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnguardamodificado;
     private javax.swing.JButton btnnuevocuenta;
     public javax.swing.JTable c;
+    private javax.swing.JComboBox<String> cbcpres;
     private javax.swing.JComboBox<String> cbestado;
     private javax.swing.JComboBox<String> cbestado2;
     private javax.swing.JComboBox<String> cmbtipoMov;
@@ -1807,6 +1928,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1816,8 +1938,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -1834,7 +1958,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1859,6 +1986,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlConMov;
     private javax.swing.JPanel pnlGesCuen;
     private javax.swing.JPanel pnlGestClien;
+    private javax.swing.JPanel pnlPresClien;
     private javax.swing.JPanel pnlRegMov;
     private javax.swing.JPanel pnlRegMov2;
     private javax.swing.JMenuItem princMItemCSesion;
@@ -1871,14 +1999,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtHasta;
     private javax.swing.JTextField txtbuscarmodiiii;
     private javax.swing.JTextField txtbuscuenta2;
+    private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcicuentas;
     private javax.swing.JTextField txtcicuentas1;
     private javax.swing.JTextField txtcodigoblo;
+    private javax.swing.JTextField txtcprestamo;
     private javax.swing.JTextField txtmontomovi;
     private javax.swing.JTextField txtnumCuenta;
     private javax.swing.JTextField txtnumeroMov;
+    private javax.swing.JTextField txtpmaximo;
+    private javax.swing.JTextField txtpprestamo;
     private javax.swing.JTextField txtsaldoinicial;
     private javax.swing.JTextField txtsaldoinicial1;
+    private javax.swing.JTextField txtspromedio;
     private javax.swing.JTextField txttipo;
     // End of variables declaration//GEN-END:variables
 
