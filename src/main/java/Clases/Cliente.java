@@ -6,6 +6,8 @@ package Clases;
 public class Cliente {
 
     private String cedula;
+    private String genero;
+    private float ingMensuales;
 
     public Cliente(final String cedula, final String nombre) {
         this.cedula = cedula;
@@ -29,4 +31,20 @@ public class Cliente {
         this.nombre = nombre;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public float getIngMensuales() {
+        return ingMensuales;
+    }
+
+    public void setIngMensuales(float ingMensuales) {
+        this.ingMensuales = ingMensuales;
+    }
+    
 }
