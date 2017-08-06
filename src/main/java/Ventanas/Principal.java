@@ -1309,6 +1309,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel20.setText("Numero de cuenta");
 
         bntconsultar.setText("Consultar");
+        bntconsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntconsultarActionPerformed(evt);
+            }
+        });
 
         txtcprestamo.setEditable(false);
 
@@ -1319,6 +1324,11 @@ public class Principal extends javax.swing.JFrame {
         txtpprestamo.setEditable(false);
 
         bntnuevo.setText("Nuevo");
+        bntnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntnuevoActionPerformed(evt);
+            }
+        });
 
         bntgprestamo.setText("Generar Prestamo");
         bntgprestamo.setEnabled(false);
@@ -1891,6 +1901,26 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_txtcedulaKeyTyped
+
+    private void bntnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntnuevoActionPerformed
+        // TODO add your handling code here:
+        txtcedula.setText("");
+        cbcpres.removeAllItems();
+        txtspromedio.setText("");
+        txtpmaximo.setText("");
+        txtcprestamo.setText("");
+        txtcprestamo.setEnabled(false);
+        txtpprestamo.setText("");
+        txtpprestamo.setEnabled(false);
+        bntgprestamo.setEnabled(false);
+    }//GEN-LAST:event_bntnuevoActionPerformed
+
+    private void bntconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntconsultarActionPerformed
+        // TODO add your handling code here:
+        txtcprestamo.setEnabled(true);
+        txtpprestamo.setEnabled(true);
+        bntgprestamo.setEnabled(true);
+    }//GEN-LAST:event_bntconsultarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
