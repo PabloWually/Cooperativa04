@@ -1917,6 +1917,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void bntconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntconsultarActionPerformed
         // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        float aux = 0;
+        Calendar cal = Calendar.getInstance();
+        int mes = cal.get(Calendar.MONTH) + 1;
+        System.out.println(mes);
+        txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))));
+        txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))*3));
         txtcprestamo.setEnabled(true);
         txtpprestamo.setEnabled(true);
         bntgprestamo.setEnabled(true);

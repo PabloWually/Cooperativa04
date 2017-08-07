@@ -84,7 +84,7 @@ public class Cuenta {
         this.nombre = nombre;
     }
     
-        final public ArrayList<Cuenta> buscarCuenta(final String cuent) {
+    final public ArrayList<Cuenta> buscarCuenta(final String cuent) {
         final ArrayList<Cuenta> cuentArray = new ArrayList<Cuenta>();
         try {
             final Connection con = cnx.conexionmySQL();
@@ -105,5 +105,26 @@ public class Cuenta {
         } catch (SQLException ex) {
             Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
         return cuentArray;
+    }
+    
+    final public float saldoMensual(String mes) {
+        float promMensual = 0;
+        try {
+            final Connection con = cnx.conexionmySQL();
+            final Statement statement = con.createStatement();
+            final ResultSet result = statement.executeQuery(
+                    "SELECT AVG(saldo_mov) AS prom FROM sistemabancario.movimiento group by FECHA\n" +
+                    "HAVING FECHA BETWEEN '2017-"+mes+"-01' AND '2017-"+mes+"-29'");
+            while (result.next()) {
+                float aux = 0;
+                promMensual = Float.parseFloat(result.getString("prom"));
+            }
+            try { con.close(); }
+            catch (SQLException ex) {
+                Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        System.out.println(promMensual);
+        return promMensual;
     }
 }
