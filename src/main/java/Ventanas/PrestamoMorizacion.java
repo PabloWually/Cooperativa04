@@ -5,12 +5,27 @@
  */
 package Ventanas;
 
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author CDK
  */
 public class PrestamoMorizacion extends javax.swing.JFrame {
 
+    int periodo;
+    double cuota;
+    double amotizacion;
+    int promedio;
+    double interes1 = 0.04;
+    double interes2 = 0.05;
+    double saldopro;
+    float capital;
+    double inter;
+    private String fecha;
+    
     /**
      * Creates new form PrestamoMorizacion
      */
@@ -27,51 +42,60 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDatos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "PERIODO", "FECHA", "CUOTA", "AMORTIZACION", "INTERESES", "PENDIENTES"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Periodo", "Fecha", "Cuota", "Amortizacion", "Interes", "Pendiente"
+            }
+        ));
+        jScrollPane1.setViewportView(tblDatos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 918, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(448, 448, 448))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        cargar(24);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,9 +131,68 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void cargar(int meses) {
+        DefaultTableModel modelo = (DefaultTableModel) tblDatos.getModel();
+        Calendar cal = Calendar.getInstance();
+        
+        Object[] fila = new Object[7];
+       // R = P [(i (1 + i)n) / ((1 + i)n – 1)]
+        // R = 1000 [(0.04 (1 + 0.04)5) / ((1 + 0.04)5 – 1)]
+        double suma = 0.0;
+        cuota = ((1000*((interes1)*(Math.pow(1+interes1,meses)))/(Math.pow(1+interes1,meses)-1)));
+        cuota = Math.round(cuota*100.0)/100.0;
+        capital =1000;
+        saldopro = capital;
+        
+        for (int i = 1; i <= meses; i++) {
+            //amotizacion = 1000 * (interes1*((Math.pow(1+interes1, meses))/(Math.pow(1+interes1,meses)-1)));
+            if(i==1){
+            inter = interes1*1000;
+            amotizacion = cuota-inter;
+            amotizacion = Math.round(amotizacion*100.0)/100.0;
+            System.out.println(interes1);
+            fila[0] = Integer.toString(i);
+            fila[1] = fecha = cal.get(Calendar.YEAR) + "-" +cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DAY_OF_MONTH);
+            fila[2] = cuota;
+            fila[3] = amotizacion;
+            suma = suma + amotizacion;
+            fila[4] = inter;
+            saldopro = saldopro - amotizacion;
+            fila[5] = saldopro;
+            
+            }else{
+                System.out.println(saldopro+"---");   
+            inter = (interes1*saldopro);
+            double interr = Math.round(inter);
+            amotizacion = cuota-inter;
+            amotizacion = Math.round(amotizacion*100.0)/100.0;
+            saldopro = saldopro - amotizacion;
+            saldopro = Math.round(saldopro*100.0)/100.0;
+            System.out.println(inter);
+            fila[0] = Integer.toString(i);
+            fila[1] = fecha;
+            fila[2] = cuota;
+            suma = suma + amotizacion;
+            fila[3] = amotizacion;
+            fila[4] = interr;
+            if(saldopro<0){
+            saldopro=0;
+            }
+            fila[5] = saldopro;
+           
+            }
+            fila[6] = suma;
+            modelo.addRow(fila);
+        }
 
+        tblDatos.setModel(modelo);
+
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblDatos;
     // End of variables declaration//GEN-END:variables
 }
