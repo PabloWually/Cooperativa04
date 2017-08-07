@@ -1352,6 +1352,11 @@ public class Principal extends javax.swing.JFrame {
 
         bntgprestamo.setText("Generar Prestamo");
         bntgprestamo.setEnabled(false);
+        bntgprestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntgprestamoActionPerformed(evt);
+            }
+        });
 
         jLabel39.setText("Prestamo Maximo");
 
@@ -1984,10 +1989,10 @@ public class Principal extends javax.swing.JFrame {
         int mes = cal.get(Calendar.MONTH) + 1;
         int aux = 0;
         float valor = 0;
+        aux = Integer.parseInt(txtcprestamo.getText());
         if(!txtcprestamo.getText().equals(""))
         {
-            aux = Integer.parseInt(txtcprestamo.getText());
-            valor = cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())*3;
+            valor = Float.parseFloat(txtpmaximo.getText());
             if(aux > valor)
             {
                 JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
@@ -2012,6 +2017,33 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_txtpprestamoFocusLost
+
+    private void bntgprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntgprestamoActionPerformed
+        // TODO add your handling code here:
+        int aux = 0, aux1 = 0;
+        float valor = 0;
+        aux = Integer.parseInt(txtpprestamo.getText());
+        aux1 = Integer.parseInt(txtcprestamo.getText());
+        if(aux < 3 || aux > 36)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                    + "El valor debe estar entre 3 y 36 meses");
+            txtpprestamo.setText("");
+        }
+        valor = Float.parseFloat(txtpmaximo.getText());
+        if(aux1 > valor)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                    + "El valor debe ser menor al de prestamo maximo");
+            txtcprestamo.setText("");
+        }
+        if(txtcprestamo.getText().equals("") || txtpprestamo.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido");
+        }else{
+            PrestamoMorizacion pres = new PrestamoMorizacion(Integer.parseInt(txtcprestamo.getText()),Integer.parseInt(txtpprestamo.getText()));
+            pres.setVisible(true);
+        }        
+    }//GEN-LAST:event_bntgprestamoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

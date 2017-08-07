@@ -19,18 +19,26 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
     double cuota;
     double amotizacion;
     int promedio;
-    double interes1 = 0.04;
-    double interes2 = 0.05;
+    double interes1 = 0.16;
+    double interes2 = 0.10;
     double saldopro;
     float capital;
     double inter;
     private String fecha;
+    int meses;
     
     /**
      * Creates new form PrestamoMorizacion
      */
     public PrestamoMorizacion() {
         initComponents();
+    }
+    
+    public PrestamoMorizacion(int saldo, int mes) {
+        initComponents();
+        capital = saldo;
+        meses = mes;
+        cargar();
     }
 
     /**
@@ -47,8 +55,9 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
         tblDatos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -94,7 +103,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        cargar(24);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -132,7 +141,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
         });
     }
     
-    public void cargar(int meses) {
+    public void cargar() {
         DefaultTableModel modelo = (DefaultTableModel) tblDatos.getModel();
         Calendar cal = Calendar.getInstance();
         
@@ -140,47 +149,67 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
        // R = P [(i (1 + i)n) / ((1 + i)n – 1)]
         // R = 1000 [(0.04 (1 + 0.04)5) / ((1 + 0.04)5 – 1)]
         double suma = 0.0;
-        cuota = ((1000*((interes1)*(Math.pow(1+interes1,meses)))/(Math.pow(1+interes1,meses)-1)));
+        if(meses < 12)
+            cuota = ((capital*((interes1)*(Math.pow(1+interes1,meses)))/(Math.pow(1+interes1,meses)-1)));
+        else
+            cuota = ((capital*((interes2)*(Math.pow(1+interes2,meses)))/(Math.pow(1+interes2,meses)-1)));
         cuota = Math.round(cuota*100.0)/100.0;
-        capital =1000;
         saldopro = capital;
-        
+        int m=0,d=0,a=0;
+        m=(cal.get(Calendar.MONTH)+2);
+        d=cal.get(Calendar.DAY_OF_MONTH);
+        a=cal.get(Calendar.YEAR);
+
         for (int i = 1; i <= meses; i++) {
-            //amotizacion = 1000 * (interes1*((Math.pow(1+interes1, meses))/(Math.pow(1+interes1,meses)-1)));
-            if(i==1){
-            inter = interes1*1000;
-            amotizacion = cuota-inter;
-            amotizacion = Math.round(amotizacion*100.0)/100.0;
-            System.out.println(interes1);
-            fila[0] = Integer.toString(i);
-            fila[1] = fecha = cal.get(Calendar.YEAR) + "-" +cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DAY_OF_MONTH);
-            fila[2] = cuota;
-            fila[3] = amotizacion;
-            suma = suma + amotizacion;
-            fila[4] = inter;
-            saldopro = saldopro - amotizacion;
-            fila[5] = saldopro;
-            
-            }else{
-                System.out.println(saldopro+"---");   
-            inter = (interes1*saldopro);
-            double interr = Math.round(inter);
-            amotizacion = cuota-inter;
-            amotizacion = Math.round(amotizacion*100.0)/100.0;
-            saldopro = saldopro - amotizacion;
-            saldopro = Math.round(saldopro*100.0)/100.0;
-            System.out.println(inter);
-            fila[0] = Integer.toString(i);
-            fila[1] = fecha;
-            fila[2] = cuota;
-            suma = suma + amotizacion;
-            fila[3] = amotizacion;
-            fila[4] = interr;
-            if(saldopro<0){
-            saldopro=0;
-            }
-            fila[5] = saldopro;
-           
+            if (i == 1) {
+                if(meses < 12)
+                    inter = interes1 * capital;
+                else
+                    inter = interes2 * capital;
+                amotizacion = cuota - inter;
+                amotizacion = Math.round(amotizacion * 100.0) / 100.0;
+                System.out.println(interes1);
+                fila[0] = Integer.toString(i);
+                fila[1] = a + "-" + m + "-" + d;
+                fila[2] = cuota;
+                fila[3] = amotizacion;
+                suma = suma + amotizacion;
+                fila[4] = inter;
+                saldopro = saldopro - amotizacion;
+                fila[5] = saldopro;
+
+            } else {
+                System.out.println(saldopro + "---");
+                if(meses < 12)
+                    inter = (interes1 * saldopro);
+                else
+                    inter = (interes2 * saldopro);
+                double interr = Math.round(inter);
+                amotizacion = cuota - inter;
+                amotizacion = Math.round(amotizacion * 100.0) / 100.0;
+                saldopro = saldopro - amotizacion;
+                saldopro = Math.round(saldopro * 100.0) / 100.0;
+                System.out.println(inter);
+                fila[0] = Integer.toString(i);
+                if(m >= 12){
+                    m=0;
+                    m += 1;
+                    a += 1;
+                    fila[1] = a + "-" + m + "-" + d;
+                }else{
+                    m += 1;
+                    fila[1] = a + "-" + m + "-" + d;
+                }
+                    
+                fila[2] = cuota;
+                suma = suma + amotizacion;
+                fila[3] = amotizacion;
+                fila[4] = interr;
+                if (saldopro < 0) {
+                    saldopro = 0;
+                }
+                fila[5] = saldopro;
+
             }
             fila[6] = suma;
             modelo.addRow(fila);
