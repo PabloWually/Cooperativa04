@@ -59,7 +59,10 @@ public class ConexionMysql {
                 nom = resul.getString(2);
                 genero = resul.getString(3);
                 ingresos = resul.getString(4);
-                ans = ci + " " + nom + " " + genero + " " + "ingresos";
+                if(genero.equals("M"))
+                    ans = ci + " " + nom + " Maculino " + ingresos;
+                else
+                    ans = ci + " " + nom + " Femenino " + ingresos;
             }
         } catch (SQLException error) {
             System.out.println("Existe un ERROR: " + error);

@@ -1719,7 +1719,6 @@ public class Principal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String t = "";
-        String g = "";
         if (cmbtipoMov.getSelectedItem().equals("Debito")) {
             t = "DEB";
         } else {
@@ -1728,8 +1727,7 @@ public class Principal extends javax.swing.JFrame {
 
         String monto = txtmontomovi.getText();
         float mon = Float.parseFloat(monto);
-        if (txtnumCuenta.getText().equals("") || cmbtipoMov.getSelectedItem().equals("") || txtmontomovi.getText().equals("")
-                || txtIngresos.getText().equals("")) {
+        if (txtnumCuenta.getText().equals("") || cmbtipoMov.getSelectedItem().equals("") || txtmontomovi.getText().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Uno o mas campos vacios");
         } else {
             if (mon > 0) {
