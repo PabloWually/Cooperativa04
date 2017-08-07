@@ -15,7 +15,7 @@ public class ConexionMysql {
     public Connection conexionmySQL() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabancario", "root", "arevalo533");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabancario", "root", "12345");
             System.out.println("conexion establecida");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("error de conexion :( ");
@@ -46,6 +46,8 @@ public class ConexionMysql {
         String sql;
         String ci;
         String nom;
+        String genero;
+        String ingresos;
         String ans = "No existe registro";
         try {
 
@@ -55,7 +57,9 @@ public class ConexionMysql {
             while (resul.next()) {
                 ci = resul.getString(1);
                 nom = resul.getString(2);
-                ans = ci + " " + nom;
+                genero = resul.getString(3);
+                ingresos = resul.getString(4);
+                ans = ci + " " + nom + " " + genero + " " + "ingresos";
             }
         } catch (SQLException error) {
             System.out.println("Existe un ERROR: " + error);
@@ -63,13 +67,15 @@ public class ConexionMysql {
         return ans;
     }
 
-    public void ingresoClientes(final String ci, final String nombre, final String apellido) {
+    public void ingresoClientes(final String ci, final String nombre, final String apellido, String genero, float ingresos) {
         final Connection reg = conexionmySQL();
         try {
             //SELECCIONO LAS SENTENCIAS DE SQL--------------
-            final PreparedStatement sentencia = reg.prepareStatement("INSERT INTO cliente VALUES (?,?)");
+            final PreparedStatement sentencia = reg.prepareStatement("INSERT INTO cliente VALUES (?,?,?,?)");
             sentencia.setString(2, nombre + " " + apellido);
             sentencia.setString(1, ci);
+            sentencia.setString(3, genero);
+            sentencia.setString(4, Float.toString(ingresos));
             //Este metodo actualiza y si afecta a mas de una columna se pone de 1 a mas
             final int res = sentencia.executeUpdate();
             if (res > 0) {
@@ -86,7 +92,7 @@ public class ConexionMysql {
     public DefaultTableModel cargarDatosCliente(final DefaultTableModel modeloCliente) {
         int cont1 = 1;
         final Connection reg = conexionmySQL();
-        Object[] tcliente = new Object[3];
+        Object[] tcliente = new Object[5];
         try {
             final Statement sentenciaSQL = reg.createStatement();
             final ResultSet p = sentenciaSQL.executeQuery("select * from CLIENTE");
@@ -94,6 +100,11 @@ public class ConexionMysql {
                 tcliente[0] = cont1;
                 tcliente[1] = p.getString("cedula");
                 tcliente[2] = p.getString("nombre");
+                if(p.getString("genero").equals("M"))
+                    tcliente[3] = "Masculino";
+                else
+                    tcliente[3] = "Femenino";
+                tcliente[4] = p.getString("ing_mesuales");
                 modeloCliente.addRow(tcliente);
                 cont1 = cont1 + 1;
             }

@@ -483,6 +483,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         gesClitxNombre = new javax.swing.JTextField();
         gesClitxApellido = new javax.swing.JTextField();
+        cmbGenero = new javax.swing.JComboBox<>();
+        txtIngresos = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         pnlGesCuen = new javax.swing.JPanel();
         spnGesCl1 = new javax.swing.JTabbedPane();
         gesCliIngreso1 = new javax.swing.JPanel();
@@ -592,10 +596,6 @@ public class Principal extends javax.swing.JFrame {
         pnlRegMov2Layout.setHorizontalGroup(
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                .addGap(229, 229, 229)
-                .addComponent(jLabel34)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnlRegMov2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
@@ -603,18 +603,18 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel27))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                        .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                                .addComponent(txtmontomovi, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cmbtipoMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(136, 346, Short.MAX_VALUE))))
+                        .addComponent(txtmontomovi, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbtipoMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtnumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(220, 360, Short.MAX_VALUE))
+            .addGroup(pnlRegMov2Layout.createSequentialGroup()
+                .addGap(229, 229, 229)
+                .addComponent(jLabel34)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlRegMov2Layout.setVerticalGroup(
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -646,13 +646,13 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 749, Short.MAX_VALUE)
             .addGroup(pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlRegMovLayout.createSequentialGroup()
-                    .addGap(0, 14, Short.MAX_VALUE)
+                    .addGap(0, 8, Short.MAX_VALUE)
                     .addComponent(pnlRegMov2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+                    .addGap(0, 7, Short.MAX_VALUE)))
         );
         pnlRegMovLayout.setVerticalGroup(
             pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 349, Short.MAX_VALUE)
+            .addGap(0, 351, Short.MAX_VALUE)
             .addGroup(pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlRegMovLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -669,7 +669,7 @@ public class Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "N", "C.I", "Nombre"
+                "N", "C.I", "Nombre", "Genero", "Ingresos Mensuales"
             }
         ));
         jScrollPane1.setViewportView(c);
@@ -762,6 +762,18 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
         jLabel4.setText("INGRESO DE CLIENTES");
 
+        cmbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+
+        txtIngresos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIngresosKeyTyped(evt);
+            }
+        });
+
+        jLabel20.setText("Ingresos Mensuales:");
+
+        jLabel11.setText("Género:");
+
         javax.swing.GroupLayout gesCliIngresoLayout = new javax.swing.GroupLayout(gesCliIngreso);
         gesCliIngreso.setLayout(gesCliIngresoLayout);
         gesCliIngresoLayout.setHorizontalGroup(
@@ -782,36 +794,48 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gesCliIngresoLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(gesClitxApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(gesClitxApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(64, 64, 64)
+                        .addGroup(gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel11))
+                        .addGap(18, 18, 18)
+                        .addGroup(gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmbGenero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtIngresos)))
                     .addGroup(gesCliIngresoLayout.createSequentialGroup()
                         .addGap(132, 132, 132)
-                        .addComponent(gesCliBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(104, 371, Short.MAX_VALUE))
-            .addGroup(gesCliIngresoLayout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(gesCliBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(gesCliIngresoLayout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(jLabel4)))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         gesCliIngresoLayout.setVerticalGroup(
             gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gesCliIngresoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(27, 27, 27)
                 .addGroup(gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(gesClitxCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(gesClitxCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(cmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
                 .addGroup(gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(gesClitxNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(gesClitxNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel20)
+                        .addComponent(txtIngresos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gesClitxApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(60, 60, 60)
                 .addComponent(gesCliBtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         spnGesCl.addTab("Ingreso", gesCliIngreso);
@@ -869,27 +893,26 @@ public class Principal extends javax.swing.JFrame {
         gesCliIngreso1Layout.setHorizontalGroup(
             gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
                 .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
                         .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19))
-                        .addGap(18, 18, 18)
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel22))
-                        .addGap(18, 18, 18)
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(79, 341, Short.MAX_VALUE))
-            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19))
+                                .addGap(18, 18, 18)
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22))
+                                .addGap(18, 18, 18)
+                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(gesCliIngreso1Layout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addComponent(gesCliBtnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1606,13 +1629,30 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_gesCliBtnGuardar1ActionPerformed
 
     private void gesCliBtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gesCliBtnGuardarActionPerformed
-        if (gesClitxCedula.getText().equals("") || gesClitxNombre.getText().equals("") || gesClitxApellido.getText().equals("")) {
+        String g = "";
+        float sal = 0;
+        int aux = 0;
+        try{
+            sal = Float.parseFloat(txtIngresos.getText());
+            aux = 1;
+        }catch(Exception e)
+        {
+            aux = 0;
+        }
+        if (gesClitxCedula.getText().equals("") || gesClitxNombre.getText().equals("") || gesClitxApellido.getText().equals("") ||
+                txtIngresos.getText().equals("") || aux == 0) {
             JOptionPane.showMessageDialog(rootPane, "Uno o mas campos vacios");
         } else if (op.validadorDeCedula(gesClitxCedula.getText())) {
+            if (cmbtipoMov.getSelectedItem().equals("Masculino")) {
+                g = "M";
+            } else {
+                g = "F";
+            }
             String respuesta = con.buscarCliente(gesClitxCedula.getText());
             System.out.println("Respuesta: " + respuesta);
             if (respuesta.equals("No existe registro")) {
-                con.ingresoClientes(gesClitxCedula.getText(), gesClitxNombre.getText(), gesClitxApellido.getText());
+                con.ingresoClientes(gesClitxCedula.getText(), gesClitxNombre.getText(), gesClitxApellido.getText(),
+                        g, sal);
                 recargarCliente();
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Usuario ya Existente");
@@ -1679,14 +1719,17 @@ public class Principal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String t = "";
+        String g = "";
         if (cmbtipoMov.getSelectedItem().equals("Debito")) {
             t = "DEB";
         } else {
             t = "CRE";
         }
+
         String monto = txtmontomovi.getText();
         float mon = Float.parseFloat(monto);
-        if (txtnumCuenta.getText().equals("") || cmbtipoMov.getSelectedItem().equals("") || txtmontomovi.getText().equals("")) {
+        if (txtnumCuenta.getText().equals("") || cmbtipoMov.getSelectedItem().equals("") || txtmontomovi.getText().equals("")
+                || txtIngresos.getText().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Uno o mas campos vacios");
         } else {
             if (mon > 0) {
@@ -1744,6 +1787,14 @@ public class Principal extends javax.swing.JFrame {
         reiniciarSistema();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void txtIngresosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIngresosKeyTyped
+        // TODO add your handling code here:
+        final char caracter = evt.getKeyChar();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') && caracter != '.') {
+           evt.consume();
+        }
+    }//GEN-LAST:event_txtIngresosKeyTyped
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1787,6 +1838,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JTable c;
     private javax.swing.JComboBox<String> cbestado;
     private javax.swing.JComboBox<String> cbestado2;
+    private javax.swing.JComboBox<String> cmbGenero;
     private javax.swing.JComboBox<String> cmbtipoMov;
     private javax.swing.JLabel fecha1;
     private javax.swing.JButton gesCliBtnBuscar;
@@ -1807,6 +1859,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1816,6 +1869,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel24;
@@ -1869,6 +1923,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txDesde;
     private javax.swing.JTextField txtConsMovCuenta;
     private javax.swing.JTextField txtHasta;
+    private javax.swing.JTextField txtIngresos;
     private javax.swing.JTextField txtbuscarmodiiii;
     private javax.swing.JTextField txtbuscuenta2;
     private javax.swing.JTextField txtcicuentas;
