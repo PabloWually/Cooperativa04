@@ -1941,11 +1941,11 @@ public class Principal extends javax.swing.JFrame {
         Cuenta cuent = new Cuenta();
         float aux = 0;
         Calendar cal = Calendar.getInstance();
-        int mes = cal.get(Calendar.MONTH) + 1;
+        int mes = cal.get(Calendar.MONTH);
         if(cbcpres.getItemCount() > 0)
         {
-            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))));
-            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))*3));
+            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())));
+            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())*3));
             txtcprestamo.setEditable(true);
             txtpprestamo.setEditable(true);
             bntgprestamo.setEnabled(true);
@@ -1987,7 +1987,7 @@ public class Principal extends javax.swing.JFrame {
         if(!txtcprestamo.getText().equals(""))
         {
             aux = Integer.parseInt(txtcprestamo.getText());
-            valor = cuent.saldoMensual(Integer.toString(mes))*3;
+            valor = cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())*3;
             if(aux > valor)
             {
                 JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "

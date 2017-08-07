@@ -107,14 +107,16 @@ public class Cuenta {
         return cuentArray;
     }
     
-    final public float saldoMensual(String mes) {
+    final public float saldoMensual(String mes, String cuenta) {
         float promMensual = 0;
         try {
             final Connection con = cnx.conexionmySQL();
             final Statement statement = con.createStatement();
             final ResultSet result = statement.executeQuery(
-                    "SELECT AVG(saldo_mov) AS prom FROM sistemabancario.movimiento group by FECHA\n" +
-                    "HAVING FECHA BETWEEN '2017-"+mes+"-01' AND '2017-"+mes+"-29'");
+                    "SELECT prom FROM (SELECT cod_cuenta, AVG(saldo_mov) as prom \n" +
+                    "FROM (SELECT cod_cuenta, fecha, saldo_mov FROM sistemabancario.movimiento\n" +
+                    "HAVING FECHA BETWEEN '2017-"+mes+"-01' AND '2017-"+mes+"-29') as tb1 group by tb1.cod_cuenta) as tb \n" +
+                    "WHERE tb.cod_cuenta = '"+cuenta+"';");
             while (result.next()) {
                 float aux = 0;
                 promMensual = Float.parseFloat(result.getString("prom"));
