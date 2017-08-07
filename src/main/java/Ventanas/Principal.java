@@ -1316,12 +1316,32 @@ public class Principal extends javax.swing.JFrame {
         });
 
         txtcprestamo.setEditable(false);
+        txtcprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtcprestamoFocusLost(evt);
+            }
+        });
+        txtcprestamo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcprestamoKeyTyped(evt);
+            }
+        });
 
         jLabel40.setText("Ingrese Cantidad de Prestamo");
 
         jLabel41.setText("Periodo de Prestamo");
 
         txtpprestamo.setEditable(false);
+        txtpprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtpprestamoFocusLost(evt);
+            }
+        });
+        txtpprestamo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtpprestamoKeyTyped(evt);
+            }
+        });
 
         bntnuevo.setText("Nuevo");
         bntnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -1891,9 +1911,10 @@ public class Principal extends javax.swing.JFrame {
             aux = cuent.buscarCuenta(ced);
             if(aux.size() > 0) {
                 for(int i = 0; i < aux.size(); i++) {
-                    if(aux.get(i).getEstado().equals("act"))
+                    if(aux.get(i).getEstado().equals("ACT")){
                         System.out.println(aux.get(i).getCodigo());
                         cbcpres.addItem(Integer.toString(aux.get(i).getCodigo()));
+                    }
                 }
             }
             else {
@@ -1909,9 +1930,9 @@ public class Principal extends javax.swing.JFrame {
         txtspromedio.setText("");
         txtpmaximo.setText("");
         txtcprestamo.setText("");
-        txtcprestamo.setEnabled(false);
+        txtcprestamo.setEditable(false);
         txtpprestamo.setText("");
-        txtpprestamo.setEnabled(false);
+        txtpprestamo.setEditable(false);
         bntgprestamo.setEnabled(false);
     }//GEN-LAST:event_bntnuevoActionPerformed
 
@@ -1921,13 +1942,76 @@ public class Principal extends javax.swing.JFrame {
         float aux = 0;
         Calendar cal = Calendar.getInstance();
         int mes = cal.get(Calendar.MONTH) + 1;
-        System.out.println(mes);
-        txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))));
-        txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))*3));
-        txtcprestamo.setEnabled(true);
-        txtpprestamo.setEnabled(true);
-        bntgprestamo.setEnabled(true);
+        if(cbcpres.getItemCount() > 0)
+        {
+            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))));
+            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes))*3));
+            txtcprestamo.setEditable(true);
+            txtpprestamo.setEditable(true);
+            bntgprestamo.setEnabled(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
+            txtcedula.setText("");
+            cbcpres.removeAllItems();
+            txtspromedio.setText("");
+            txtpmaximo.setText("");
+        }
     }//GEN-LAST:event_bntconsultarActionPerformed
+
+    private void txtcprestamoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcprestamoKeyTyped
+        // TODO add your handling code here:
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+           evt.consume();
+        }
+    }//GEN-LAST:event_txtcprestamoKeyTyped
+
+    private void txtpprestamoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpprestamoKeyTyped
+        // TODO add your handling code here:
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+           evt.consume();
+        }
+    }//GEN-LAST:event_txtpprestamoKeyTyped
+
+    private void txtcprestamoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcprestamoFocusLost
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        Calendar cal = Calendar.getInstance();
+        int mes = cal.get(Calendar.MONTH) + 1;
+        int aux = 0;
+        float valor = 0;
+        if(!txtcprestamo.getText().equals(""))
+        {
+            aux = Integer.parseInt(txtcprestamo.getText());
+            valor = cuent.saldoMensual(Integer.toString(mes))*3;
+            if(aux > valor)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                        + "El valor debe ser menor al de prestamo maximo");
+                txtcprestamo.setText("");
+            }
+        }
+        
+    }//GEN-LAST:event_txtcprestamoFocusLost
+
+    private void txtpprestamoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpprestamoFocusLost
+        // TODO add your handling code here:
+        int aux = 0;
+        if(!txtpprestamo.getText().equals("")){
+            aux = Integer.parseInt(txtpprestamo.getText());
+            if(aux < 3 || aux > 36)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                        + "El valor debe estar entre 3 y 36 meses");
+                txtpprestamo.setText("");
+            }
+        }
+        
+    }//GEN-LAST:event_txtpprestamoFocusLost
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
