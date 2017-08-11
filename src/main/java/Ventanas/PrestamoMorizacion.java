@@ -153,6 +153,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
             cuota = ((capital*((interes1)*(Math.pow(1+interes1,meses)))/(Math.pow(1+interes1,meses)-1)));
         else
             cuota = ((capital*((interes2)*(Math.pow(1+interes2,meses)))/(Math.pow(1+interes2,meses)-1)));
+        
         cuota = Math.round(cuota*100.0)/100.0;
         saldopro = capital;
         int m=0,d=0,a=0;
