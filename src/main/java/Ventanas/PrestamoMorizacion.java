@@ -19,8 +19,8 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
     double cuota;
     double amotizacion;
     int promedio;
-    double interes1 = 0.16;
-    double interes2 = 0.10;
+    double interes1 = 0.0133;
+    double interes2 = 0.0083;
     double saldopro;
     float capital;
     double inter;
@@ -150,9 +150,9 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
         // R = 1000 [(0.04 (1 + 0.04)5) / ((1 + 0.04)5 – 1)]
         double suma = 0.0;
         if(meses < 12)
-            cuota = ((capital*((interes1)*(Math.pow(1+interes1,meses)))/(Math.pow(1+interes1,meses)-1)));
+            cuota = (capital)*(Math.pow((1+interes1), meses)*interes1)/((Math.pow((1+interes1), meses)-1));
         else
-            cuota = ((capital*((interes2)*(Math.pow(1+interes2,meses)))/(Math.pow(1+interes2,meses)-1)));
+            cuota = (capital)*(Math.pow((1+interes2), meses)*interes2)/((Math.pow((1+interes2), meses)-1));
         
         cuota = Math.round(cuota*100.0)/100.0;
         saldopro = capital;
