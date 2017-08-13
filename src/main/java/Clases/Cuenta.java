@@ -1,5 +1,6 @@
 package Clases;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -128,5 +129,43 @@ public class Cuenta {
             Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
         System.out.println(promMensual);
         return promMensual;
+    }
+    
+    public int cuentaPrestamo(String cu) {
+        int valor = 0;
+        final Connection con = cnx.conexionmySQL();
+        try{
+            CallableStatement sentencia;
+            sentencia = con.prepareCall("UPDATE `sistemabancario`.`cuenta` SET `PRESTAMO`='1' WHERE `COD_CUENTA`='"+cu+"';");
+            valor = sentencia.executeUpdate();
+        }catch (SQLException ex) {
+            Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try { con.close(); }
+        catch (SQLException ex) {
+            Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return valor;
+    }
+    
+    final public int tipo(String cuenta) {
+        int tipo = 0;
+        try {
+            final Connection con = cnx.conexionmySQL();
+            final Statement statement = con.createStatement();
+            final ResultSet result = statement.executeQuery(
+                    "SELECT prestamo FROM sistemabancario.cuenta\n" +
+                    "WHERE COD_CUENTA = '"+cuenta+"';");
+            while (result.next()) {
+                float aux = 0;
+                tipo = Integer.parseInt(result.getString("PRESTAMO"));                       
+            }
+            try { con.close(); }
+            catch (SQLException ex) {
+                Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        System.out.println(tipo);
+        return tipo;
     }
 }

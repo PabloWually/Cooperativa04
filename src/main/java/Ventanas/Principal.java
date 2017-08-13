@@ -1976,6 +1976,7 @@ public class Principal extends javax.swing.JFrame {
     private void bntgprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntgprestamoActionPerformed
         // TODO add your handling code here:
         int aux = 0, aux1 = 0;
+        Cuenta c = new Cuenta();
         float valor = 0;
         aux = Integer.parseInt(txtpprestamo.getText());
         aux1 = Integer.parseInt(txtcprestamo.getText());
@@ -1992,10 +1993,10 @@ public class Principal extends javax.swing.JFrame {
                 + "El valor debe ser menor al de prestamo maximo");
             txtcprestamo.setText("");
         }
-        if(txtcprestamo.getText().equals("") || txtpprestamo.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane, "Valor invalido");
+        if(txtcprestamo.getText().equals("") || txtpprestamo.getText().equals("") || c.tipo(cbcpres.getSelectedItem().toString()) == 1){
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n La cuenta ya posee un preastamo");
         }else{
-            PrestamoMorizacion pres = new PrestamoMorizacion(Integer.parseInt(txtcprestamo.getText()),Integer.parseInt(txtpprestamo.getText()));
+            PrestamoMorizacion pres = new PrestamoMorizacion(Integer.parseInt(txtcprestamo.getText()),Integer.parseInt(txtpprestamo.getText()),cbcpres.getSelectedItem().toString());
             pres.setVisible(true);
         }
     }//GEN-LAST:event_bntgprestamoActionPerformed

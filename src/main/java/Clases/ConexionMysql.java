@@ -15,7 +15,7 @@ public class ConexionMysql {
     public Connection conexionmySQL() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabancario", "root", "arevalo533");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabancario", "root", "12345");
             System.out.println("conexion establecida");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("error de conexion :( ");
@@ -342,12 +342,13 @@ public class ConexionMysql {
                     ultimoRegistro = 11111111;
                 }
                 System.out.println("Ultimo Registro: " + ultimoRegistro);
-                final PreparedStatement sentencia = reg.prepareStatement("INSERT INTO cuenta VALUES (?,?,?,?,?)");
+                final PreparedStatement sentencia = reg.prepareStatement("INSERT INTO cuenta VALUES (?,?,?,?,?,?)");
                 sentencia.setString(5, estado);
                 sentencia.setFloat(4, saldo);
                 sentencia.setString(3, tipo);
                 sentencia.setString(2, cia);
                 sentencia.setInt(1, ultimoRegistro + 1);
+                sentencia.setString(6, "0");
                 //Este metodo actualiza y si afecta a mas de una columna se pone de 1 a mas
                 final int res = sentencia.executeUpdate();
                 if (res > 0) {

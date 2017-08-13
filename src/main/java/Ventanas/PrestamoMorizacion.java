@@ -5,6 +5,9 @@
  */
 package Ventanas;
 
+import Clases.Cuenta;
+import Clases.PRESTAMO;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
@@ -26,6 +29,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
     double inter;
     private String fecha;
     int meses;
+    String cuenta;
     
     /**
      * Creates new form PrestamoMorizacion
@@ -34,10 +38,11 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
         initComponents();
     }
     
-    public PrestamoMorizacion(int saldo, int mes) {
+    public PrestamoMorizacion(int saldo, int mes, String cu) {
         initComponents();
         capital = saldo;
         meses = mes;
+        cuenta = cu;
         cargar();
     }
 
@@ -142,6 +147,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
     }
     
     public void cargar() {
+        ArrayList<PRESTAMO> pre = new ArrayList<PRESTAMO>();
         DefaultTableModel modelo = (DefaultTableModel) tblDatos.getModel();
         Calendar cal = Calendar.getInstance();
         
@@ -163,6 +169,8 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
 
         for (int i = 1; i <= meses; i++) {
             if (i == 1) {
+                PRESTAMO pres = new PRESTAMO();
+                pres.setCuenta(cuenta);
                 if(meses < 12)
                     inter = interes1 * capital;
                 else
@@ -171,21 +179,23 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
                 amotizacion = Math.round(amotizacion * 100.0) / 100.0;
                 System.out.println(interes1);
                 fila[0] = Integer.toString(i);
-                fila[1] = a + "-" + m + "-" + d;
-                fila[2] = cuota;
-                fila[3] = amotizacion;
+                fila[1] = a + "-" + m + "-" + d;pres.setFecha(a + "-" + m + "-" + d);
+                fila[2] = cuota;pres.setCuota((float)cuota);
+                fila[3] = amotizacion;pres.setAmortizacion((float)amotizacion);
                 suma = suma + amotizacion;
-                fila[4] = inter;
+                fila[4] = inter;pres.setInteres((float)inter);
                 saldopro = saldopro - amotizacion;
-                fila[5] = saldopro;
-
+                fila[5] = saldopro;pres.setPendiente((float)saldopro);
+                pre.add(pres);
             } else {
+                PRESTAMO pres = new PRESTAMO();
+                pres.setCuenta(cuenta);
                 System.out.println(saldopro + "---");
                 if(meses < 12)
                     inter = (interes1 * saldopro);
                 else
                     inter = (interes2 * saldopro);
-                double interr = Math.round(inter);
+                double inter1 = Math.round(inter);
                 amotizacion = cuota - inter;
                 amotizacion = Math.round(amotizacion * 100.0) / 100.0;
                 saldopro = saldopro - amotizacion;
@@ -196,28 +206,34 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
                     m=0;
                     m += 1;
                     a += 1;
-                    fila[1] = a + "-" + m + "-" + d;
+                    fila[1] = a + "-" + m + "-" + d;pres.setFecha(a + "-" + m + "-" + d);
                 }else{
                     m += 1;
-                    fila[1] = a + "-" + m + "-" + d;
+                    fila[1] = a + "-" + m + "-" + d;pres.setFecha(a + "-" + m + "-" + d);
                 }
                     
-                fila[2] = cuota;
+                fila[2] = cuota;pres.setCuota((float)cuota);
                 suma = suma + amotizacion;
-                fila[3] = amotizacion;
-                fila[4] = interr;
+                fila[3] = amotizacion;pres.setAmortizacion((float)amotizacion);
+                fila[4] = inter1; pres.setInteres((float)inter1);
                 if (saldopro < 0) {
                     saldopro = 0;
                 }
-                fila[5] = saldopro;
-
+                fila[5] = saldopro;pres.setPendiente((float)saldopro);
+                pre.add(pres);
             }
             fila[6] = suma;
             modelo.addRow(fila);
         }
 
         tblDatos.setModel(modelo);
-
+        PRESTAMO p = new PRESTAMO();
+        for(int i = 0 ; i < pre.size(); i++)
+        {
+            p.ingresarPrestamo(pre.get(i));
+        }
+        Cuenta cu = new Cuenta();
+        cu.cuentaPrestamo(cuenta);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
