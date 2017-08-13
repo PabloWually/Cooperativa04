@@ -11,6 +11,7 @@ public class Loggin extends javax.swing.JFrame {
 
     public Loggin() {
         initComponents();
+        this.setLocationRelativeTo(null);
         LogBtnIngresar.getFocusListeners();
     }
     private final ConexionMysql l = new ConexionMysql();

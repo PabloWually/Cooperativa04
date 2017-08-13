@@ -30,6 +30,7 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
         cargarCliente();
         ValidacionTipeo();
         FechayHora();
@@ -545,6 +546,31 @@ public class Principal extends javax.swing.JFrame {
         txDesde = new javax.swing.JTextField();
         txtHasta = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
+        pnlPresClien = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        txtcprestamo = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        txtcedula = new javax.swing.JTextField();
+        cbcpres = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        txtspromedio = new javax.swing.JTextField();
+        txtpmaximo = new javax.swing.JTextField();
+        bntconsultar = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        txtpprestamo = new javax.swing.JTextField();
+        bntnuevo = new javax.swing.JButton();
+        bntgprestamo = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         fecha1 = new javax.swing.JLabel();
         lbUsuPrinc = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
@@ -596,25 +622,27 @@ public class Principal extends javax.swing.JFrame {
         pnlRegMov2Layout.setHorizontalGroup(
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel27))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                        .addComponent(txtmontomovi, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cmbtipoMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtnumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(220, 360, Short.MAX_VALUE))
-            .addGroup(pnlRegMov2Layout.createSequentialGroup()
-                .addGap(229, 229, 229)
-                .addComponent(jLabel34)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(229, 229, 229)
+                        .addComponent(jLabel34))
+                    .addGroup(pnlRegMov2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel27))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlRegMov2Layout.createSequentialGroup()
+                                .addComponent(txtmontomovi, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbtipoMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtnumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         pnlRegMov2Layout.setVerticalGroup(
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -643,16 +671,16 @@ public class Principal extends javax.swing.JFrame {
         pnlRegMov.setLayout(pnlRegMovLayout);
         pnlRegMovLayout.setHorizontalGroup(
             pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 749, Short.MAX_VALUE)
+            .addGap(0, 1022, Short.MAX_VALUE)
             .addGroup(pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlRegMovLayout.createSequentialGroup()
-                    .addGap(0, 8, Short.MAX_VALUE)
+                    .addGap(0, 151, Short.MAX_VALUE)
                     .addComponent(pnlRegMov2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 7, Short.MAX_VALUE)))
+                    .addGap(0, 151, Short.MAX_VALUE)))
         );
         pnlRegMovLayout.setVerticalGroup(
             pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 351, Short.MAX_VALUE)
+            .addGap(0, 442, Short.MAX_VALUE)
             .addGroup(pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlRegMovLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -724,7 +752,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(gesCliVisualizarLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(336, Short.MAX_VALUE))
         );
         gesCliVisualizarLayout.setVerticalGroup(
             gesCliVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -809,7 +837,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(gesCliIngresoLayout.createSequentialGroup()
                         .addGap(204, 204, 204)
                         .addComponent(jLabel4)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         gesCliIngresoLayout.setVerticalGroup(
             gesCliIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1037,7 +1065,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(txtsaldoinicial1, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(gesCliMod1Layout.createSequentialGroup()
                                         .addComponent(cbestado2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 157, Short.MAX_VALUE))
+                                        .addGap(0, 430, Short.MAX_VALUE))
                                     .addComponent(txtcicuentas1)
                                     .addComponent(txttipo, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(316, 316, 316))
@@ -1158,7 +1186,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(txtbuscuenta2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56)
                                 .addComponent(btnConsultarCuentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1191,7 +1219,7 @@ public class Principal extends javax.swing.JFrame {
             pnlGesCuenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlGesCuenLayout.createSequentialGroup()
                 .addComponent(spnGesCl1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Gestion Cuentas", pnlGesCuen);
@@ -1305,10 +1333,232 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnConsultasMovimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consulta Movimientos", pnlConMov);
+
+        jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        txtcprestamo.setEditable(false);
+        txtcprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtcprestamoFocusLost(evt);
+            }
+        });
+        txtcprestamo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcprestamoKeyTyped(evt);
+            }
+        });
+
+        jLabel11.setText("Ingrese N.- Cedula: ");
+
+        jLabel20.setText("Numero de cuenta");
+
+        txtcedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcedulaKeyTyped(evt);
+            }
+        });
+
+        jLabel23.setText("Saldo promedio");
+
+        jLabel39.setText("Prestamo Maximo");
+
+        txtspromedio.setEditable(false);
+
+        txtpmaximo.setEditable(false);
+
+        bntconsultar.setText("Consultar");
+        bntconsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntconsultarActionPerformed(evt);
+            }
+        });
+
+        jLabel40.setText("Ingrese Cantidad de Prestamo");
+
+        jLabel41.setText("Periodo de Prestamo");
+
+        txtpprestamo.setEditable(false);
+        txtpprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtpprestamoFocusLost(evt);
+            }
+        });
+        txtpprestamo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtpprestamoKeyTyped(evt);
+            }
+        });
+
+        bntnuevo.setText("Nuevo");
+        bntnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntnuevoActionPerformed(evt);
+            }
+        });
+
+        bntgprestamo.setText("Generar Prestamo");
+        bntgprestamo.setEnabled(false);
+        bntgprestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntgprestamoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(bntgprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(51, 51, 51)
+                                    .addComponent(bntconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel41)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtpprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel23)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel40)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(txtcprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(292, 292, 292)
+                                .addComponent(jLabel39))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel20))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbcpres, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtpmaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtspromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(184, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)
+                    .addComponent(txtspromedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(cbcpres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(txtpmaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(txtcprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel41)
+                            .addComponent(txtpprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(bntnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntgprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
+        );
+
+        jTabbedPane2.addTab("Consultas", jPanel1);
+
+        jLabel42.setText("Ingrese N.- Cedula: ");
+
+        jLabel43.setText("Numero de Cuenta:");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Periodo", "Fecha", "Cuota", "Amortizacion", "Interes", "Pendiente"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel43))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 852, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane2.addTab("Prestamos", jPanel2);
+
+        javax.swing.GroupLayout pnlPresClienLayout = new javax.swing.GroupLayout(pnlPresClien);
+        pnlPresClien.setLayout(pnlPresClienLayout);
+        pnlPresClienLayout.setHorizontalGroup(
+            pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresClienLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 993, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        pnlPresClienLayout.setVerticalGroup(
+            pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPresClienLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane2)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Prestamos", pnlPresClien);
 
         fecha1.setText("Fecha: ");
 
@@ -1371,22 +1621,22 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbUsuPrinc)
                 .addGap(68, 68, 68)
                 .addComponent(fecha1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblFecha)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblHora)
-                .addGap(67, 67, 67))
+                .addGap(58, 58, 58))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1399,9 +1649,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(lblFecha)
                     .addComponent(jLabel13)
                     .addComponent(lblHora))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -1785,6 +2035,146 @@ public class Principal extends javax.swing.JFrame {
         reiniciarSistema();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void bntgprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntgprestamoActionPerformed
+        // TODO add your handling code here:
+        int aux = 0, aux1 = 0;
+        float valor = 0;
+        aux = Integer.parseInt(txtpprestamo.getText());
+        aux1 = Integer.parseInt(txtcprestamo.getText());
+        if(aux < 3 || aux > 36)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                + "El valor debe estar entre 3 y 36 meses");
+            txtpprestamo.setText("");
+        }
+        valor = Float.parseFloat(txtpmaximo.getText());
+        if(aux1 > valor)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                + "El valor debe ser menor al de prestamo maximo");
+            txtcprestamo.setText("");
+        }
+        if(txtcprestamo.getText().equals("") || txtpprestamo.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido");
+        }else{
+            PrestamoMorizacion pres = new PrestamoMorizacion(Integer.parseInt(txtcprestamo.getText()),Integer.parseInt(txtpprestamo.getText()));
+            pres.setVisible(true);
+        }
+    }//GEN-LAST:event_bntgprestamoActionPerformed
+
+    private void bntnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntnuevoActionPerformed
+        // TODO add your handling code here:
+        txtcedula.setText("");
+        cbcpres.removeAllItems();
+        txtspromedio.setText("");
+        txtpmaximo.setText("");
+        txtcprestamo.setText("");
+        txtcprestamo.setEditable(false);
+        txtpprestamo.setText("");
+        txtpprestamo.setEditable(false);
+        bntgprestamo.setEnabled(false);
+    }//GEN-LAST:event_bntnuevoActionPerformed
+
+    private void txtpprestamoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpprestamoKeyTyped
+        // TODO add your handling code here:
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtpprestamoKeyTyped
+
+    private void txtpprestamoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpprestamoFocusLost
+        // TODO add your handling code here:
+        int aux = 0;
+        if(!txtpprestamo.getText().equals("")){
+            aux = Integer.parseInt(txtpprestamo.getText());
+            if(aux < 3 || aux > 36)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                    + "El valor debe estar entre 3 y 36 meses");
+                txtpprestamo.setText("");
+            }
+        }
+    }//GEN-LAST:event_txtpprestamoFocusLost
+
+    private void bntconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntconsultarActionPerformed
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        float aux = 0;
+        Calendar cal = Calendar.getInstance();
+        int mes = cal.get(Calendar.MONTH);
+        if(cbcpres.getItemCount() > 0)
+        {
+            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())));
+            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())*3));
+            txtcprestamo.setEditable(true);
+            txtpprestamo.setEditable(true);
+            bntgprestamo.setEnabled(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
+            txtcedula.setText("");
+            cbcpres.removeAllItems();
+            txtspromedio.setText("");
+            txtpmaximo.setText("");
+        }
+    }//GEN-LAST:event_bntconsultarActionPerformed
+
+    private void txtcedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcedulaKeyTyped
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        cbcpres.removeAllItems();
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+            evt.consume();
+        }
+        if(ced.length() == 13 || ced.length() == 10) {
+            ArrayList<Cuenta> aux = new ArrayList<Cuenta>();
+            aux = cuent.buscarCuenta(ced);
+            if(aux.size() > 0) {
+                for(int i = 0; i < aux.size(); i++) {
+                    if(aux.get(i).getEstado().equals("ACT")){
+                        System.out.println(aux.get(i).getCodigo());
+                        cbcpres.addItem(Integer.toString(aux.get(i).getCodigo()));
+                    }
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
+            }
+        }
+    }//GEN-LAST:event_txtcedulaKeyTyped
+
+    private void txtcprestamoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcprestamoKeyTyped
+        // TODO add your handling code here:
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtcprestamoKeyTyped
+
+    private void txtcprestamoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcprestamoFocusLost
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        Calendar cal = Calendar.getInstance();
+        int mes = cal.get(Calendar.MONTH) + 1;
+        int aux = 0;
+        float valor = 0;
+        aux = Integer.parseInt(txtcprestamo.getText());
+        if(!txtcprestamo.getText().equals(""))
+        {
+            valor = Float.parseFloat(txtpmaximo.getText());
+            if(aux > valor)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Valor invalido \n "
+                    + "El valor debe ser menor al de prestamo maximo");
+                txtcprestamo.setText("");
+            }
+        }
+    }//GEN-LAST:event_txtcprestamoFocusLost
     private void txtIngresosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIngresosKeyTyped
         // TODO add your handling code here:
         final char caracter = evt.getKeyChar();
@@ -1827,6 +2217,9 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_cuentas_consulta1;
+    private javax.swing.JButton bntconsultar;
+    private javax.swing.JButton bntgprestamo;
+    private javax.swing.JButton bntnuevo;
     private javax.swing.JButton btnConsultarCuentas1;
     private javax.swing.JButton btnConsultasMovimientos;
     private javax.swing.JButton btnOk;
@@ -1834,6 +2227,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnguardamodificado;
     private javax.swing.JButton btnnuevocuenta;
     public javax.swing.JTable c;
+    private javax.swing.JComboBox<String> cbcpres;
     private javax.swing.JComboBox<String> cbestado;
     private javax.swing.JComboBox<String> cbestado2;
     private javax.swing.JComboBox<String> cmbGenero;
@@ -1855,6 +2249,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1870,6 +2265,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -1886,7 +2282,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1898,11 +2299,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> jcbtipocuenta;
     public javax.swing.JLabel lbUsuPrinc;
     private javax.swing.JLabel lblConMovi;
@@ -1911,6 +2318,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlConMov;
     private javax.swing.JPanel pnlGesCuen;
     private javax.swing.JPanel pnlGestClien;
+    private javax.swing.JPanel pnlPresClien;
     private javax.swing.JPanel pnlRegMov;
     private javax.swing.JPanel pnlRegMov2;
     private javax.swing.JMenuItem princMItemCSesion;
@@ -1924,14 +2332,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngresos;
     private javax.swing.JTextField txtbuscarmodiiii;
     private javax.swing.JTextField txtbuscuenta2;
+    private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcicuentas;
     private javax.swing.JTextField txtcicuentas1;
     private javax.swing.JTextField txtcodigoblo;
+    private javax.swing.JTextField txtcprestamo;
     private javax.swing.JTextField txtmontomovi;
     private javax.swing.JTextField txtnumCuenta;
     private javax.swing.JTextField txtnumeroMov;
+    private javax.swing.JTextField txtpmaximo;
+    private javax.swing.JTextField txtpprestamo;
     private javax.swing.JTextField txtsaldoinicial;
     private javax.swing.JTextField txtsaldoinicial1;
+    private javax.swing.JTextField txtspromedio;
     private javax.swing.JTextField txttipo;
     // End of variables declaration//GEN-END:variables
 

@@ -1,5 +1,13 @@
 package Clases;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author solan
@@ -12,6 +20,7 @@ public class Cuenta {
     private float saldo;
     private String estado;
     private String nombre;
+    final ConexionMysql cnx = new ConexionMysql();
 
     public Cuenta(final int codigo, final String ci, final String tipo, 
             final float saldo, final String estado, final String nombre) {
@@ -73,5 +82,51 @@ public class Cuenta {
 
     public void setNombre(final String nombre) {
         this.nombre = nombre;
+    }
+    
+    final public ArrayList<Cuenta> buscarCuenta(final String cuent) {
+        final ArrayList<Cuenta> cuentArray = new ArrayList<Cuenta>();
+        try {
+            final Connection con = cnx.conexionmySQL();
+            final Statement statement = con.createStatement();
+            final ResultSet result = statement.executeQuery("SELECT * FROM cuenta WHERE cedula='"+cuent+"';");
+            while (result.next()) {
+                final Cuenta cuen = new Cuenta();
+                cuen.setCodigo(Integer.parseInt(result.getString("cod_cuenta")));
+                cuen.setCi(result.getString("cedula"));
+                cuen.setTipo(result.getString("tipo"));
+                cuen.setSaldo(Float.parseFloat(result.getString("saldo")));
+                cuen.setEstado(result.getString("estado"));
+                cuentArray.add(cuen);
+            }
+            try { con.close(); }
+            catch (SQLException ex) {
+                Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        return cuentArray;
+    }
+    
+    final public float saldoMensual(String mes, String cuenta) {
+        float promMensual = 0;
+        try {
+            final Connection con = cnx.conexionmySQL();
+            final Statement statement = con.createStatement();
+            final ResultSet result = statement.executeQuery(
+                    "SELECT prom FROM (SELECT cod_cuenta, AVG(saldo_mov) as prom \n" +
+                    "FROM (SELECT cod_cuenta, fecha, saldo_mov FROM sistemabancario.movimiento\n" +
+                    "HAVING FECHA BETWEEN '2017-"+mes+"-01' AND '2017-"+mes+"-29') as tb1 group by tb1.cod_cuenta) as tb \n" +
+                    "WHERE tb.cod_cuenta = '"+cuenta+"';");
+            while (result.next()) {
+                float aux = 0;
+                promMensual = Float.parseFloat(result.getString("prom"));
+            }
+            try { con.close(); }
+            catch (SQLException ex) {
+                Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cuenta.class.getName()).log(Level.SEVERE, null, ex); }
+        System.out.println(promMensual);
+        return promMensual;
     }
 }
