@@ -550,8 +550,7 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         txtcprestamo = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
         txtcedula = new javax.swing.JTextField();
         cbcpres = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
@@ -564,6 +563,7 @@ public class Principal extends javax.swing.JFrame {
         txtpprestamo = new javax.swing.JTextField();
         bntnuevo = new javax.swing.JButton();
         bntgprestamo = new javax.swing.JButton();
+        jLabel44 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -623,7 +623,6 @@ public class Principal extends javax.swing.JFrame {
             pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegMov2Layout.createSequentialGroup()
                 .addGroup(pnlRegMov2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlRegMov2Layout.createSequentialGroup()
                         .addGap(229, 229, 229)
                         .addComponent(jLabel34))
@@ -1340,6 +1339,8 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.LEFT);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         txtcprestamo.setEditable(false);
         txtcprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -1351,24 +1352,31 @@ public class Principal extends javax.swing.JFrame {
                 txtcprestamoKeyTyped(evt);
             }
         });
+        jPanel1.add(txtcprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 120, -1));
 
-        jLabel11.setText("Ingrese N.- Cedula: ");
-
-        jLabel20.setText("Numero de cuenta");
+        jLabel47.setText("Numero de cuenta");
+        jPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
         txtcedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtcedulaKeyTyped(evt);
             }
         });
+        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 190, -1));
+
+        jPanel1.add(cbcpres, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 190, -1));
 
         jLabel23.setText("Saldo promedio");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
 
         jLabel39.setText("Prestamo Maximo");
+        jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, -1, -1));
 
         txtspromedio.setEditable(false);
+        jPanel1.add(txtspromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 120, -1));
 
         txtpmaximo.setEditable(false);
+        jPanel1.add(txtpmaximo, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 120, -1));
 
         bntconsultar.setText("Consultar");
         bntconsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -1376,10 +1384,13 @@ public class Principal extends javax.swing.JFrame {
                 bntconsultarActionPerformed(evt);
             }
         });
+        jPanel1.add(bntconsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 100, 40));
 
         jLabel40.setText("Ingrese Cantidad de Prestamo");
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
 
         jLabel41.setText("Periodo de Prestamo");
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
 
         txtpprestamo.setEditable(false);
         txtpprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1392,6 +1403,7 @@ public class Principal extends javax.swing.JFrame {
                 txtpprestamoKeyTyped(evt);
             }
         });
+        jPanel1.add(txtpprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 120, -1));
 
         bntnuevo.setText("Nuevo");
         bntnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -1399,6 +1411,7 @@ public class Principal extends javax.swing.JFrame {
                 bntnuevoActionPerformed(evt);
             }
         });
+        jPanel1.add(bntnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 140, 50));
 
         bntgprestamo.setText("Generar Prestamo");
         bntgprestamo.setEnabled(false);
@@ -1407,85 +1420,10 @@ public class Principal extends javax.swing.JFrame {
                 bntgprestamoActionPerformed(evt);
             }
         });
+        jPanel1.add(bntgprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 160, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(bntgprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(51, 51, 51)
-                                    .addComponent(bntconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel41)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtpprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel23)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel40)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(txtcprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(292, 292, 292)
-                                .addComponent(jLabel39))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel20))
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbcpres, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtpmaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtspromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(184, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23)
-                    .addComponent(txtspromedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(cbcpres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39)
-                    .addComponent(txtpmaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel40)
-                            .addComponent(txtcprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel41)
-                            .addComponent(txtpprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(bntnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bntgprestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
-        );
+        jLabel44.setText("Ingrese N.- Cedula: ");
+        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         jTabbedPane2.addTab("Consultas", jPanel1);
 
@@ -1535,7 +1473,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel43)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1555,7 +1493,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(pnlPresClienLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane2)
-                .addContainerGap())
+                .addGap(41, 41, 41))
         );
 
         jTabbedPane1.addTab("Prestamos", pnlPresClien);
@@ -2121,32 +2059,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bntconsultarActionPerformed
 
-    private void txtcedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcedulaKeyTyped
-        // TODO add your handling code here:
-        Cuenta cuent = new Cuenta();
-        cbcpres.removeAllItems();
-        char caracter = evt.getKeyChar();
-        final String ced = txtcedula.getText();
-        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
-            evt.consume();
-        }
-        if(ced.length() == 13 || ced.length() == 10) {
-            ArrayList<Cuenta> aux = new ArrayList<Cuenta>();
-            aux = cuent.buscarCuenta(ced);
-            if(aux.size() > 0) {
-                for(int i = 0; i < aux.size(); i++) {
-                    if(aux.get(i).getEstado().equals("ACT")){
-                        System.out.println(aux.get(i).getCodigo());
-                        cbcpres.addItem(Integer.toString(aux.get(i).getCodigo()));
-                    }
-                }
-            }
-            else {
-                JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
-            }
-        }
-    }//GEN-LAST:event_txtcedulaKeyTyped
-
     private void txtcprestamoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcprestamoKeyTyped
         // TODO add your handling code here:
         char caracter = evt.getKeyChar();
@@ -2182,6 +2094,36 @@ public class Principal extends javax.swing.JFrame {
            evt.consume();
         }
     }//GEN-LAST:event_txtIngresosKeyTyped
+
+    private void txtcprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcprestamoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcprestamoActionPerformed
+
+    private void txtcedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcedulaKeyTyped
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        cbcpres.removeAllItems();
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedula.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+            evt.consume();
+        }
+        if(ced.length() == 13 || ced.length() == 10) {
+            ArrayList<Cuenta> aux = new ArrayList<Cuenta>();
+            aux = cuent.buscarCuenta(ced);
+            if(aux.size() > 0) {
+                for(int i = 0; i < aux.size(); i++) {
+                    if(aux.get(i).getEstado().equals("ACT")){
+                        System.out.println(aux.get(i).getCodigo());
+                        cbcpres.addItem(Integer.toString(aux.get(i).getCodigo()));
+                    }
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
+            }
+        }
+    }//GEN-LAST:event_txtcedulaKeyTyped
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2288,6 +2230,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
