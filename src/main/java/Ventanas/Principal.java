@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Clases.Operaciones;
+import Clases.PRESTAMO;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -574,9 +575,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtcedPres = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbxcuentapres = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
         bntcalcular = new javax.swing.JButton();
@@ -1438,6 +1439,12 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel42.setText("Ingrese N.- Cedula: ");
 
+        txtcedPres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtcedPresKeyTyped(evt);
+            }
+        });
+
         jLabel43.setText("Numero de Cuenta:");
 
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -1450,7 +1457,12 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tblDatos);
 
-        bntcalcular.setText("Calcular");
+        bntcalcular.setText("BUSCAR");
+        bntcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntcalcularActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1465,8 +1477,8 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel43))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtcedPres, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(cbxcuentapres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(68, 68, 68)
                         .addComponent(bntcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1480,12 +1492,12 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcedPres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel42)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbxcuentapres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bntcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
@@ -2137,6 +2149,60 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtcedulaKeyTyped
 
+    private void bntcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntcalcularActionPerformed
+        // TODO add your handling code here:
+        PRESTAMO pres = new PRESTAMO();
+        ArrayList<PRESTAMO> presArray = new ArrayList<PRESTAMO>();
+        DefaultTableModel modelo = (DefaultTableModel) tblDatos.getModel();
+        Object[] fila = new Object[6];
+        presArray = pres.buscarPrestamo(cbxcuentapres.getSelectedItem().toString());
+        if(presArray.size() == 0)
+        {
+            JOptionPane.showMessageDialog(rootPane, "La cuenta no posee prestamos");
+        }
+        else
+        {
+            modelo.setRowCount(0);
+            for(int i = 0; i < presArray.size(); i++)
+            {
+                pres = presArray.get(i);
+                fila[0] = i + 1;
+                fila[1] = pres.getFecha();
+                fila[2] = pres.getCuota();
+                fila[3] = pres.getAmortizacion();
+                fila[4] = pres.getInteres();
+                fila[5] = pres.getPendiente();
+                modelo.addRow(fila);
+            }   
+        }
+    }//GEN-LAST:event_bntcalcularActionPerformed
+
+    private void txtcedPresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcedPresKeyTyped
+        // TODO add your handling code here:
+        Cuenta cuent = new Cuenta();
+        cbxcuentapres.removeAllItems();
+        char caracter = evt.getKeyChar();
+        final String ced = txtcedPres.getText();
+        if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') || ced.length() >= 13) {
+            evt.consume();
+        }
+        if(ced.length() == 13 || ced.length() == 10) {
+            ArrayList<Cuenta> aux = new ArrayList<Cuenta>();
+            aux = cuent.buscarCuenta(ced);
+            if(aux.size() > 0) {
+                for(int i = 0; i < aux.size(); i++) {
+                    if(aux.get(i).getEstado().equals("ACT")){
+                        System.out.println(aux.get(i).getCodigo());
+                        cbxcuentapres.addItem(Integer.toString(aux.get(i).getCodigo()));
+                    }
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Cliente no encontrado");
+            }
+        }
+    }//GEN-LAST:event_txtcedPresKeyTyped
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2265,6 +2331,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbcpres;
     private javax.swing.JComboBox<String> cbestado;
     private javax.swing.JComboBox<String> cbestado2;
+    private javax.swing.JComboBox<String> cbxcuentapres;
     private javax.swing.JComboBox<String> cmbGenero;
     private javax.swing.JComboBox<String> cmbtipoMov;
     private javax.swing.JLabel fecha1;
@@ -2284,7 +2351,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2345,7 +2411,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> jcbtipocuenta;
     public javax.swing.JLabel lbUsuPrinc;
     private javax.swing.JLabel lblConMovi;
@@ -2369,6 +2434,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtIngresos;
     private javax.swing.JTextField txtbuscarmodiiii;
     private javax.swing.JTextField txtbuscuenta2;
+    private javax.swing.JTextField txtcedPres;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcicuentas;
     private javax.swing.JTextField txtcicuentas1;

@@ -8,7 +8,10 @@ package Clases;
 import java.awt.List;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -106,5 +109,28 @@ public class PRESTAMO {
             Logger.getLogger(PRESTAMO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return valor;
+    }
+    
+    final public ArrayList<PRESTAMO> buscarPrestamo(final String cuent) {
+        final ArrayList<PRESTAMO> presArray = new ArrayList<PRESTAMO>();
+        try {
+            final Connection con = cnx.conexionmySQL();
+            final Statement statement = con.createStatement();
+            final ResultSet result = statement.executeQuery("SELECT * FROM sistemabancario.prestamos WHERE cuenta = '"+cuent+"';");
+            while (result.next()) {
+                final PRESTAMO pres = new PRESTAMO();
+                pres.setFecha(result.getString("fecha"));
+                pres.setCuota(Float.parseFloat(result.getString("couta")));
+                pres.setAmortizacion(Float.parseFloat(result.getString("amortizacion")));
+                pres.setInteres(Float.parseFloat(result.getString("interes")));
+                pres.setPendiente(Float.parseFloat(result.getString("pendiente")));
+                presArray.add(pres);
+            }
+            try { con.close(); }
+            catch (SQLException ex) {
+                Logger.getLogger(PRESTAMO.class.getName()).log(Level.SEVERE, null, ex); }
+        } catch (SQLException ex) {
+            Logger.getLogger(PRESTAMO.class.getName()).log(Level.SEVERE, null, ex); }
+        return presArray;
     }
 }
