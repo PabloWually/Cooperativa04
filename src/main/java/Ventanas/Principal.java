@@ -2068,8 +2068,8 @@ public class Principal extends javax.swing.JFrame {
         int mes = cal.get(Calendar.MONTH);
         if(cbcpres.getItemCount() > 0)
         {
-            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())));
-            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())*3));
+            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes+1),cbcpres.getSelectedItem().toString())));
+            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes+1),cbcpres.getSelectedItem().toString())*3));
             txtcprestamo.setEditable(true);
             txtpprestamo.setEditable(true);
             bntgprestamo.setEnabled(true);
