@@ -25,6 +25,14 @@ public class Principal extends javax.swing.JFrame {
     private String fecha;
     private String hora;
     private String setCurrentUser;
+    int periodo;
+    double cuota;
+    double inter;
+    double amotizacion;
+    int promedio;
+    double saldopro;
+    double interes1 = 0.0133;
+    double interes2 = 0.0083;
     private final ConexionMysql con = new ConexionMysql();
     private final Operaciones op = new Operaciones();
 
@@ -570,7 +578,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDatos = new javax.swing.JTable();
+        bntcalcular = new javax.swing.JButton();
         fecha1 = new javax.swing.JLabel();
         lbUsuPrinc = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
@@ -1362,9 +1371,9 @@ public class Principal extends javax.swing.JFrame {
                 txtcedulaKeyTyped(evt);
             }
         });
-        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 190, -1));
+        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 190, -1));
 
-        jPanel1.add(cbcpres, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 190, -1));
+        jPanel1.add(cbcpres, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 190, -1));
 
         jLabel23.setText("Saldo promedio");
         jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
@@ -1431,7 +1440,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel43.setText("Numero de Cuenta:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1439,7 +1448,9 @@ public class Principal extends javax.swing.JFrame {
                 "Periodo", "Fecha", "Cuota", "Amortizacion", "Interes", "Pendiente"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tblDatos);
+
+        bntcalcular.setText("Calcular");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1455,25 +1466,29 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(68, 68, 68)
+                        .addComponent(bntcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 852, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel42))
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel42)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bntcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1483,17 +1498,13 @@ public class Principal extends javax.swing.JFrame {
         pnlPresClien.setLayout(pnlPresClienLayout);
         pnlPresClienLayout.setHorizontalGroup(
             pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPresClienLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 993, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPresClienLayout.createSequentialGroup()
+                .addComponent(jTabbedPane2)
+                .addContainerGap())
         );
         pnlPresClienLayout.setVerticalGroup(
             pnlPresClienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPresClienLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane2)
-                .addGap(41, 41, 41))
+            .addComponent(jTabbedPane2)
         );
 
         jTabbedPane1.addTab("Prestamos", pnlPresClien);
@@ -2157,9 +2168,90 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void cargar(double capital, int meses) {
+        DefaultTableModel modelo = (DefaultTableModel) tblDatos.getModel();
+        Calendar cal = Calendar.getInstance();
+        
+        Object[] fila = new Object[7];
+       // R = P [(i (1 + i)n) / ((1 + i)n – 1)]
+        // R = 1000 [(0.04 (1 + 0.04)5) / ((1 + 0.04)5 – 1)]
+        double suma = 0.0;
+        if(meses <= 12){
+            cuota = (capital)*(Math.pow((1+interes1), meses)*interes1)/((Math.pow((1+interes1), meses)-1));
+        }else{
+            cuota = (capital)*(Math.pow((1+interes2), meses)*interes2)/((Math.pow((1+interes2), meses)-1));
+        }
+        cuota = Math.round(cuota*100.0)/100.0;
+        saldopro = capital;
+        int m=0,d=0,a=0;
+        m=(cal.get(Calendar.MONTH)+2);
+        d=cal.get(Calendar.DAY_OF_MONTH);
+        a=cal.get(Calendar.YEAR);
+
+        for (int i = 1; i <= meses; i++) {
+            if (i == 1) {
+                if(meses <= 12){
+                    inter = interes1 * capital;
+                }else{
+                    inter = interes2 * capital;
+                }
+                amotizacion = cuota - inter;
+                amotizacion = Math.round(amotizacion * 100.0) / 100.0;
+                System.out.println(interes1);
+                fila[0] = Integer.toString(i);
+                fila[1] = a + "-" + m + "-" + d;
+                fila[2] = cuota;
+                fila[3] = amotizacion;
+                suma = suma + amotizacion;
+                fila[4] = inter;
+                saldopro = saldopro - amotizacion;
+                fila[5] = saldopro;
+            } else {
+                System.out.println(saldopro + "---");
+                if(meses <= 12)
+                    inter = (interes1 * saldopro);
+                else
+                    inter = (interes2 * saldopro);
+            
+                double inter1 = Math.round(inter);
+                amotizacion = cuota - inter;
+                amotizacion = Math.round(amotizacion * 100.0) / 100.0;
+                saldopro = saldopro - amotizacion;
+                saldopro = Math.round(saldopro * 100.0) / 100.0;
+                System.out.println(inter);
+                fila[0] = Integer.toString(i);
+                if(m >= 12){
+                    m=0;
+                    m += 1;
+                    a += 1;
+                    fila[1] = a + "-" + m + "-" + d;
+                }else{
+                    m += 1;
+                    fila[1] = a + "-" + m + "-" + d;
+                }
+                    
+                fila[2] = cuota;
+                suma = suma + amotizacion;
+                fila[3] = amotizacion;
+                fila[4] = inter1; 
+                if (saldopro < 0) {
+                    saldopro = 0;
+                }
+                fila[5] = saldopro;
+            }
+            fila[6] = suma;
+            modelo.addRow(fila);
+        }
+
+        tblDatos.setModel(modelo);
+    }
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla_cuentas_consulta1;
+    private javax.swing.JButton bntcalcular;
     private javax.swing.JButton bntconsultar;
     private javax.swing.JButton bntgprestamo;
     private javax.swing.JButton bntnuevo;
@@ -2253,7 +2345,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> jcbtipocuenta;
     public javax.swing.JLabel lbUsuPrinc;
@@ -2271,6 +2362,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane spnGesCl;
     private javax.swing.JTabbedPane spnGesCl1;
     private javax.swing.JTable tablaMovimientosConsulta;
+    private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txDesde;
     private javax.swing.JTextField txtConsMovCuenta;
     private javax.swing.JTextField txtHasta;
