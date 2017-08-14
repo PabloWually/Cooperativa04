@@ -475,6 +475,7 @@ public class Principal extends javax.swing.JFrame {
         txtnumCuenta = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
         pnlGestClien = new javax.swing.JPanel();
         spnGesCl = new javax.swing.JTabbedPane();
         gesCliVisualizar = new javax.swing.JPanel();
@@ -512,6 +513,7 @@ public class Principal extends javax.swing.JFrame {
         gesCliBtnGuardar1 = new javax.swing.JButton();
         btnnuevocuenta = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
         gesCliMod1 = new javax.swing.JPanel();
         btnbuscar = new javax.swing.JButton();
         txtbuscarmodiiii = new javax.swing.JTextField();
@@ -556,6 +558,7 @@ public class Principal extends javax.swing.JFrame {
         txDesde = new javax.swing.JTextField();
         txtHasta = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         pnlPresClien = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -574,6 +577,7 @@ public class Principal extends javax.swing.JFrame {
         bntnuevo = new javax.swing.JButton();
         bntgprestamo = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         txtcedPres = new javax.swing.JTextField();
@@ -677,25 +681,29 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(83, Short.MAX_VALUE))
         );
 
+        jLabel49.setIcon(new javax.swing.ImageIcon("C:\\Users\\pablo\\Documents\\Netbeans\\Cooperativa04\\src\\ima5.png")); // NOI18N
+
         javax.swing.GroupLayout pnlRegMovLayout = new javax.swing.GroupLayout(pnlRegMov);
         pnlRegMov.setLayout(pnlRegMovLayout);
         pnlRegMovLayout.setHorizontalGroup(
             pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1022, Short.MAX_VALUE)
-            .addGroup(pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlRegMovLayout.createSequentialGroup()
-                    .addGap(0, 151, Short.MAX_VALUE)
-                    .addComponent(pnlRegMov2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 151, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegMovLayout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addComponent(pnlRegMov2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         pnlRegMovLayout.setVerticalGroup(
             pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 442, Short.MAX_VALUE)
-            .addGroup(pnlRegMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlRegMovLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(pnlRegMov2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegMovLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel49)
+                .addGap(107, 107, 107))
+            .addGroup(pnlRegMovLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(pnlRegMov2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Registro de Movimientos", pnlRegMov);
@@ -762,7 +770,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(gesCliVisualizarLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addContainerGap(468, Short.MAX_VALUE))
         );
         gesCliVisualizarLayout.setVerticalGroup(
             gesCliVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -926,31 +934,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
         jLabel28.setText("REGISTRO DE CUENTA");
 
+        jLabel48.setIcon(new javax.swing.ImageIcon("C:\\Users\\pablo\\Documents\\Netbeans\\Cooperativa04\\src\\ima6.jpg")); // NOI18N
+
         javax.swing.GroupLayout gesCliIngreso1Layout = new javax.swing.GroupLayout(gesCliIngreso1);
         gesCliIngreso1.setLayout(gesCliIngreso1Layout);
         gesCliIngreso1Layout.setHorizontalGroup(
             gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gesCliIngreso1Layout.createSequentialGroup()
                 .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel19))
-                                .addGap(18, 18, 18)
-                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
-                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jLabel22))
-                                .addGap(18, 18, 18)
-                                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(gesCliIngreso1Layout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addComponent(gesCliBtnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -959,34 +950,61 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(gesCliIngreso1Layout.createSequentialGroup()
                         .addGap(218, 218, 218)
                         .addComponent(jLabel28)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(684, Short.MAX_VALUE))
+            .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22))
+                        .addGap(18, 18, 18)
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         gesCliIngreso1Layout.setVerticalGroup(
             gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gesCliIngreso1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel28)
-                .addGap(34, 34, 34)
-                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGap(18, 18, 18)
-                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtcicuentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18))
+                        .addGap(18, 18, 18)
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(jcbtipocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(txtsaldoinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(cbestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(gesCliIngreso1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
                 .addGroup(gesCliIngreso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gesCliBtnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnnuevocuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         spnGesCl1.addTab("Crear", gesCliIngreso1);
@@ -1075,7 +1093,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(txtsaldoinicial1, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(gesCliMod1Layout.createSequentialGroup()
                                         .addComponent(cbestado2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 430, Short.MAX_VALUE))
+                                        .addGap(0, 562, Short.MAX_VALUE))
                                     .addComponent(txtcicuentas1)
                                     .addComponent(txttipo, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(316, 316, 316))
@@ -1196,7 +1214,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(txtbuscuenta2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56)
                                 .addComponent(btnConsultarCuentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addContainerGap(440, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1272,6 +1290,8 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel38.setText("Si esta vacio, buscara todos los registros");
 
+        jLabel46.setIcon(new javax.swing.ImageIcon("C:\\Users\\pablo\\Documents\\Netbeans\\Cooperativa04\\src\\ima3.png")); // NOI18N
+
         javax.swing.GroupLayout pnlConMovLayout = new javax.swing.GroupLayout(pnlConMov);
         pnlConMov.setLayout(pnlConMovLayout);
         pnlConMovLayout.setHorizontalGroup(
@@ -1296,11 +1316,14 @@ public class Principal extends javax.swing.JFrame {
                                             .addComponent(txtHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(71, 71, 71)
                                 .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
                                     .addGroup(pnlConMovLayout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtnumeroMov, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(txtnumeroMov, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlConMovLayout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
+                                        .addComponent(jLabel46))))
                             .addGroup(pnlConMovLayout.createSequentialGroup()
                                 .addComponent(lblConMovi)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1310,7 +1333,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(pnlConMovLayout.createSequentialGroup()
                         .addGap(266, 266, 266)
                         .addComponent(btnConsultasMovimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(86, 86, 86))
         );
         pnlConMovLayout.setVerticalGroup(
             pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1320,30 +1343,35 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(lblConMovi)
                     .addComponent(txtConsMovCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel38))
-                .addGap(18, 18, 18)
                 .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlConMovLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txDesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlConMovLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txDesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(txtHasta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlConMovLayout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(txtnumeroMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(pnlConMovLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnlConMovLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtnumeroMov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnConsultasMovimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consulta Movimientos", pnlConMov);
@@ -1378,10 +1406,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(cbcpres, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 190, -1));
 
         jLabel23.setText("Saldo promedio");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, -1, -1));
 
         jLabel39.setText("Prestamo Maximo");
-        jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, -1, -1));
+        jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
 
         txtspromedio.setEditable(false);
         jPanel1.add(txtspromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 120, -1));
@@ -1398,10 +1426,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(bntconsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 100, 40));
 
         jLabel40.setText("Ingrese Cantidad de Prestamo");
-        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
+        jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
 
         jLabel41.setText("Periodo de Prestamo");
-        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         txtpprestamo.setEditable(false);
         txtpprestamo.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1435,6 +1463,9 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel44.setText("Ingrese N.- Cedula: ");
         jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+
+        jLabel45.setIcon(new javax.swing.ImageIcon("C:\\Users\\pablo\\Documents\\Netbeans\\Cooperativa04\\src\\ima2.png")); // NOI18N
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         jTabbedPane2.addTab("Consultas", jPanel1);
 
@@ -1485,7 +1516,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2083,8 +2114,8 @@ public class Principal extends javax.swing.JFrame {
         int mes = cal.get(Calendar.MONTH);
         if(cbcpres.getItemCount() > 0)
         {
-            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes+1),cbcpres.getSelectedItem().toString())));
-            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes+1),cbcpres.getSelectedItem().toString())*3));
+            txtspromedio.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())));
+            txtpmaximo.setText(Float.toString(cuent.saldoMensual(Integer.toString(mes),cbcpres.getSelectedItem().toString())*3));
             txtcprestamo.setEditable(true);
             txtpprestamo.setEditable(true);
             bntgprestamo.setEnabled(true);
@@ -2405,7 +2436,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

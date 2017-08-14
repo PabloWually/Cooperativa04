@@ -115,21 +115,10 @@ public class Cuenta {
             final Connection con = cnx.conexionmySQL();
             final Statement statement = con.createStatement();
             final ResultSet result;
-            String uax = mes;
-            if(mes.equals("3")){
-                uax = "2016-12";
-            }
-            else if(mes.equals("2")){
-                uax="2016-11";
-            }
-            else if(mes.equals("1")){
-                uax = "2016-10";
-            }else
-                uax="2017-"+(Integer.parseInt(mes)-3);
             result = statement.executeQuery(
                     "SELECT prom FROM (SELECT cod_cuenta, AVG(saldo_mov) as prom \n" +
                     "FROM (SELECT cod_cuenta, fecha, saldo_mov FROM sistemabancario.movimiento\n" +
-                    "HAVING FECHA BETWEEN '"+uax+"-01' AND '2017"+mes+"-31') as tb1 group by tb1.cod_cuenta) as tb \n" +
+                    "HAVING FECHA BETWEEN '2017-"+mes+"-01' AND '2017-"+mes+"-29') as tb1 group by tb1.cod_cuenta) as tb \n" +
                     "WHERE tb.cod_cuenta = '"+cuenta+"';");
             while (result.next()) {
                 float aux = 0;
