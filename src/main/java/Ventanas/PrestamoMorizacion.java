@@ -153,8 +153,6 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
         Calendar cal = Calendar.getInstance();
         
         Object[] fila = new Object[7];
-       // R = P [(i (1 + i)n) / ((1 + i)n – 1)]
-        // R = 1000 [(0.04 (1 + 0.04)5) / ((1 + 0.04)5 – 1)]
         double suma = 0.0;
         if(meses < 12)
             cuota = (capital)*(Math.pow((1+interes1), meses)*interes1)/((Math.pow((1+interes1), meses)-1));
