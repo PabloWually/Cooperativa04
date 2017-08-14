@@ -1,5 +1,6 @@
 package Ventanas;
 
+import Clases.Cliente;
 import Clases.ConexionMysql;
 import Clases.Cuenta;
 import Clases.Movimiento;
@@ -2000,7 +2001,21 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         int aux = 0, aux1 = 0;
         Cuenta c = new Cuenta();
+        double cu = 0;
+        Cliente cli = new Cliente();
+        float prom = cli.saldoMensual(txtcedula.getText());
         float valor = 0;
+        double capi = (double)Float.parseFloat(txtcprestamo.getText());
+        int me = Integer.parseInt(txtpprestamo.getText());
+        if(me < 12)
+            cu = (capi)*(Math.pow((1+0.0133), me)*0.0133)/((Math.pow((1+0.0133), me)-1));
+        else
+            cu = (capi)*(Math.pow((1+0.0083), me)*0.0083)/((Math.pow((1+0.0083), me)-1));
+        System.out.println(me);
+        System.out.println(capi);
+        System.out.println(cu);
+        System.out.println(prom);
+        System.out.println(prom*0.3);
         aux = Integer.parseInt(txtpprestamo.getText());
         aux1 = Integer.parseInt(txtcprestamo.getText());
         if(aux < 3 || aux > 36)
@@ -2016,8 +2031,8 @@ public class Principal extends javax.swing.JFrame {
                 + "El valor debe ser menor al de prestamo maximo");
             txtcprestamo.setText("");
         }
-        if(txtcprestamo.getText().equals("") || txtpprestamo.getText().equals("") || c.tipo(cbcpres.getSelectedItem().toString()) == 1){
-            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n La cuenta ya posee un preastamo");
+        if(txtcprestamo.getText().equals("") || txtpprestamo.getText().equals("") || c.tipo(cbcpres.getSelectedItem().toString()) == 1 || cuota > (prom*0.3)){
+            JOptionPane.showMessageDialog(rootPane, "Valor invalido \n La cuenta ya posee un preastamo \n Excede la cuota mensual");
         }else{
             PrestamoMorizacion pres = new PrestamoMorizacion(Integer.parseInt(txtcprestamo.getText()),Integer.parseInt(txtpprestamo.getText()),cbcpres.getSelectedItem().toString());
             pres.setVisible(true);
