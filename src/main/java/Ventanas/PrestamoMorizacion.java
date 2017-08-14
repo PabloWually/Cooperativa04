@@ -40,6 +40,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
     
     public PrestamoMorizacion(int saldo, int mes, String cu) {
         initComponents();
+        this.setLocationRelativeTo(null);
         capital = saldo;
         meses = mes;
         cuenta = cu;
@@ -195,7 +196,7 @@ public class PrestamoMorizacion extends javax.swing.JFrame {
                     inter = (interes1 * saldopro);
                 else
                     inter = (interes2 * saldopro);
-                double inter1 = Math.round(inter);
+                double inter1 = Math.round(inter * 100.0)/100.0;
                 amotizacion = cuota - inter;
                 amotizacion = Math.round(amotizacion * 100.0) / 100.0;
                 saldopro = saldopro - amotizacion;

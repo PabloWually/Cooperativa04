@@ -2280,7 +2280,7 @@ public class Principal extends javax.swing.JFrame {
                 else
                     inter = (interes2 * saldopro);
             
-                double inter1 = Math.round(inter);
+                double inter1 = Math.round(inter * 100.0)/100.0;
                 amotizacion = cuota - inter;
                 amotizacion = Math.round(amotizacion * 100.0) / 100.0;
                 saldopro = saldopro - amotizacion;
